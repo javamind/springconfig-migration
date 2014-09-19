@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation=
+               "http://www.springframework.org/schema/beans
+               http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="articleBlog" class="com.javamind.dto.ArticleBlog" scope="prototype"/>
+
+    <!-- Injection par constructeur -->
+    <bean name="favorite" class="com.javamind.dto.FavoriteArticle">
+        <constructor-arg ref="articleBlog"></constructor-arg>
+        <!-- Injection par setter -->
+        <property name="articleBlogSecond" ref="articleBlog"/>
+    </bean>
+
+
+</beans>
